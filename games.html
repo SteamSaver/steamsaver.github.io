@@ -1,1 +1,53 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SteamSaver - Game List</title>
+    <style>
+        :root {
+            --dark-blue: #1a2a4a;
+            --light-blue: #2a3a5a;
+            --white: #ffffff;
+            --accent: #66c0f4;
+        }
+        
+        /* ... (keep all other existing styles the same) ... */
+        
+        .btn {
+            background-color: var(--accent);
+            color: var(--dark-blue); /* Dark text on light blue */
+            padding: 12px 30px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            display: inline-block;
+            margin-top: 20px;
+            border: 2px solid var(--accent);
+        }
+        
+        .btn:hover {
+            background-color: var(--dark-blue);
+            color: var(--accent);
+            border-color: var(--accent);
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- ... (keep all other HTML the same) ... -->
+    
+    <main class="games-main">
+        <h1 class="page-title">Game Collection</h1>
+        
+        <div class="disclaimer">
+            <h2>Notice: Game List Coming Soon</h2>
+            <p>We're currently curating an amazing selection of discounted Steam games for our launch.</p>
+            <a href="https://discord.gg/RcXuhwj7" target="_blank" rel="noopener noreferrer" class="btn">
+                <i class="fab fa-discord"></i> Join Our Discord
+            </a>
+        </div>
+    </main>
+</body>
+</html>
