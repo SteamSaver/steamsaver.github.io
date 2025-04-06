@@ -12,11 +12,134 @@
             --accent: #66c0f4;
         }
         
-        /* ... (keep all other existing styles the same) ... */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: var(--dark-blue);
+            color: var(--white);
+        }
+        
+        .announcement-bar {
+            background-color: var(--light-blue);
+            padding: 8px 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
+        .top-bar {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(5px);
+        }
+        
+        .nav-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo {
+            height: 40px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 100%;
+            width: auto;
+            object-fit: contain;
+        }
+        
+        .site-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        .nav-link:hover {
+            color: var(--accent);
+        }
+        
+        .nav-icon {
+            height: 20px;
+            width: 20px;
+        }
+        
+        .games-main {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: linear-gradient(rgba(26, 42, 74, 0.9), rgba(26, 42, 74, 0.95));
+            border-radius: 8px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .page-title {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-align: center;
+            color: var(--accent);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .disclaimer {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 8px;
+            margin: 40px auto 0;
+            max-width: 800px;
+            border-left: 4px solid var(--accent);
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .disclaimer h2 {
+            color: var(--accent);
+            margin-top: 0;
+        }
+        
+        .disclaimer a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .disclaimer a:hover {
+            text-decoration: underline;
+        }
         
         .btn {
             background-color: var(--accent);
-            color: var(--dark-blue); /* Dark text on light blue */
+            color: var(--dark-blue);
             padding: 12px 30px;
             border-radius: 4px;
             text-decoration: none;
@@ -25,25 +148,65 @@
             display: inline-block;
             margin-top: 20px;
             border: 2px solid var(--accent);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         
         .btn:hover {
             background-color: var(--dark-blue);
             color: var(--accent);
-            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+        
+        .btn i {
+            margin-right: 8px;
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- ... (keep all other HTML the same) ... -->
+    <div class="announcement-bar">
+        🎉 Coming soon! Join our Discord for updates. 🎉
+    </div>
+    
+    <div class="top-bar">
+        <div class="nav-container">
+            <div class="logo-container">
+                <div class="logo">
+                    <img src="https://i.ibb.co/0jpbdmJd/Steamsaver-White-Photoroom.png" alt="SteamSaver Logo">
+                </div>
+                <div class="site-title">SteamSaver</div>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">
+                    <i class="fab fa-steam nav-icon"></i>
+                    Home
+                </a>
+                <a href="games.html" class="nav-link">
+                    <i class="fas fa-clipboard-list nav-icon"></i>
+                    Game List
+                </a>
+                <a href="https://discord.gg/RcXuhwj7" target="_blank" rel="noopener noreferrer" class="nav-link">
+                    <i class="fab fa-discord nav-icon"></i>
+                    Discord
+                </a>
+            </div>
+        </div>
+    </div>
     
     <main class="games-main">
         <h1 class="page-title">Game Collection</h1>
         
         <div class="disclaimer">
             <h2>Notice: Game List Coming Soon</h2>
-            <p>We're currently curating an amazing selection of discounted Steam games for our launch.</p>
+            <p>We're currently curating an amazing selection of discounted Steam games for our launch. Our team is working hard to verify all game keys and ensure the best prices.</p>
+            <p>When we go live, you'll find:</p>
+            <ul style="text-align: left; max-width: 500px; margin: 20px auto;">
+                <li>Genuine Steam keys at 20-80% off retail prices</li>
+                <li>Instant digital delivery after purchase</li>
+                <li>New deals added daily</li>
+                <li>Popular AAA titles and hidden gems</li>
+            </ul>
             <a href="https://discord.gg/RcXuhwj7" target="_blank" rel="noopener noreferrer" class="btn">
                 <i class="fab fa-discord"></i> Join Our Discord
             </a>
