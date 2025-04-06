@@ -1,112 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SteamSaver - Discounted Steam Games</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      background-color: #0a1120; /* Changed from black to dark blue */
-      color: #ffffff;
-    }
-
-    header {
-      background-color: #186ddf;
-      padding: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    nav a {
-      color: #ffffff;
-      margin-left: 20px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .hero {
-      padding: 100px 20px;
-      text-align: center;
-      background: linear-gradient(to right, #0a1120, #186ddf); /* Updated to match new bg */
-    }
-
-    .hero h1 {
-      font-size: 48px;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      font-size: 20px;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    .games-section {
-      padding: 50px 20px;
-      text-align: center;
-      background-color: #0a1120; /* Added to match new bg */
-    }
-
-    .upcoming-section {
-      padding: 50px 20px;
-      text-align: center;
-      background-color: #111;
-    }
-
-    .upcoming-section p {
-      font-size: 18px;
-    }
-
-    .upcoming-section a {
-      color: #186ddf;
-      text-decoration: underline;
-    }
-
-    footer {
-      background-color: #186ddf;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-    }
-
-    .logo-img {
-      height: 50px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SteamSaver - Discounted Standalone Steam Games</title>
+    <style>
+        :root {
+            --dark-blue: #1a2a4a;
+            --light-blue: #2a3a5a;
+            --white: #ffffff;
+            --accent: #66c0f4;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: var(--dark-blue);
+            color: var(--white);
+        }
+        
+        .announcement-bar {
+            background-color: var(--light-blue);
+            padding: 8px 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
+        .top-bar {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(5px);
+        }
+        
+        .nav-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo {
+            height: 40px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 100%;
+            width: auto;
+            object-fit: contain;
+        }
+        
+        .site-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        .nav-link:hover {
+            color: var(--accent);
+        }
+        
+        .nav-icon {
+            height: 20px;
+            width: 20px;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(26, 42, 74, 0.8), rgba(26, 42, 74, 0.9)), url('https://cdn.cloudflare.steamstatic.com/store/home/store_home_share.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            background-color: var(--accent);
+            color: var(--dark-blue);
+            padding: 12px 30px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: var(--white);
+            transform: translateY(-2px);
+        }
+        
+        .games-section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+        
+        .disclaimer {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 8px;
+            margin: 40px auto 0;
+            max-width: 800px;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .disclaimer h3 {
+            color: var(--accent);
+            margin-top: 0;
+        }
+        
+        .disclaimer a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .disclaimer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-  <header>
-    <a href="https://ibb.co/wNZmxB6x">
-      <img src="https://i.ibb.co/0jpbdmJd/Steamsaver-White-Photoroom.png" alt="SteamSaver Logo" class="logo-img">
-    </a>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#games">Games</a>
-      <a href="#upcoming">Upcoming</a>
-      <a href="#contact">Contact</a>
-      <a href="https://discord.gg/mdJVgjQH6J" target="_blank">Discord</a>
-    </nav>
-  </header>
-
-  <section class="hero">
-    <h1>Welcome to SteamSaver</h1>
-    <p>Your one-stop shop for the best deals on Steam games. Save big and play more!</p>
-  </section>
-
-  <section class="games-section" id="games">
-    <h2>Game List</h2>
-    <p>This section is currently unavailable. Please join the <a href="https://discord.gg/mdJVgjQH6J" target="_blank">Discord</a> for updates.</p>
-  </section>
-
-  <footer>
-    <a href="https://ibb.co/wNZmxB6x">
-      <img src="https://i.ibb.co/0jpbdmJd/Steamsaver-White-Photoroom.png" alt="SteamSaver Logo" class="logo-img">
-    </a>
-    <p>&copy; 2025 SteamSaver. All rights reserved.</p>
-  </footer>
+    <div class="announcement-bar">
+        🎉 Coming soon! Join our Discord for updates. 🎉
+    </div>
+    
+    <div class="top-bar">
+        <div class="nav-container">
+            <div class="logo-container">
+                <div class="logo">
+                    <img src="https://i.ibb.co/0jpbdmJd/Steamsaver-White-Photoroom.png" alt="SteamSaver Logo">
+                </div>
+                <div class="site-title">SteamSaver</div>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">
+                    <i class="fab fa-steam nav-icon"></i>
+                    Home
+                </a>
+                <a href="games.html" class="nav-link">
+                    <i class="fas fa-clipboard-list nav-icon"></i>
+                    Game List
+                </a>
+                <a href="https://discord.gg/RcXuhwj7" target="_blank" rel="noopener noreferrer" class="nav-link">
+                    <i class="fab fa-discord nav-icon"></i>
+                    Discord
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <section class="hero">
+        <h1>Save Big on Standalone Steam Games</h1>
+        <p>SteamSaver will offer genuine Steam games at discounted prices. Get ready for instant delivery of your favorite titles!</p>
+        <a href="https://discord.gg/RcXuhwj7" target="_blank" rel="noopener noreferrer" class="btn">Learn More on Discord</a>
+    </section>
+    
+    <section id="games" class="games-section">
+        <h2 class="section-title">Our Game Collection Coming Soon</h2>
+        
+        <div class="disclaimer">
+            <h3>Notice: Site Under Development</h3>
+            <p>We're currently working hard to bring you the best selection of discounted Steam games. Our platform is not yet live, but we're excited to launch soon!</p>
+            <p>All games will be genuine Steam games with instant delivery upon purchase. Check back later or join our <a href="https://discord.gg/RcXuhwj7" target="_blank">Discord community</a> to be notified when we go live.</p>
+            <p>Thank you for your interest in SteamSaver!</p>
+        </div>
+    </section>
 </body>
 </html>
