@@ -1,1 +1,156 @@
-test
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SteamSaver - Discounted Steam Games</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #000000;
+      color: #ffffff;
+    }
+
+    header {
+      background-color: #186ddf;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-placeholder {
+      width: 150px;
+      height: 50px;
+      background-color: #ffffff;
+      color: #186ddf;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: #ffffff;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero {
+      padding: 100px 20px;
+      text-align: center;
+      background: linear-gradient(to right, #000000, #186ddf);
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .games-section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .game-card {
+      background-color: #1a1a1a;
+      display: inline-block;
+      width: 200px;
+      margin: 20px;
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    .game-card img {
+      width: 100%;
+      border-radius: 5px;
+    }
+
+    .game-card h3 {
+      margin: 10px 0 5px 0;
+      font-size: 18px;
+    }
+
+    .game-card p {
+      color: #999;
+      font-size: 14px;
+    }
+
+    .upcoming-section {
+      padding: 50px 20px;
+      text-align: center;
+      background-color: #111;
+    }
+
+    .upcoming-section p {
+      font-size: 18px;
+    }
+
+    .upcoming-section a {
+      color: #186ddf;
+      text-decoration: underline;
+    }
+
+    footer {
+      background-color: #186ddf;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-placeholder">LOGO</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#games">Games</a>
+      <a href="#upcoming">Upcoming</a>
+      <a href="#contact">Contact</a>
+      <a href="https://discord.gg/" target="_blank">Discord</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Welcome to SteamSaver</h1>
+    <p>Your one-stop shop for the best deals on Steam games. Save big and play more!</p>
+  </section>
+
+  <section class="games-section" id="games">
+    <h2>Top Deals</h2>
+    <div class="game-card">
+      <img src="https://via.placeholder.com/200x100" alt="Game 1">
+      <h3>Game Title 1</h3>
+      <p>Now only $9.99!</p>
+    </div>
+    <div class="game-card">
+      <img src="https://via.placeholder.com/200x100" alt="Game 2">
+      <h3>Game Title 2</h3>
+      <p>Was $29.99, now $14.99!</p>
+    </div>
+    <div class="game-card">
+      <img src="https://via.placeholder.com/200x100" alt="Game 3">
+      <h3>Game Title 3</h3>
+      <p>Save 50% today!</p>
+    </div>
+  </section>
+
+  <section class="upcoming-section" id="upcoming">
+    <h2>Game List</h2>
+    <p>This section is currently unavailable. Please join the <a href="https://discord.gg/" target="_blank">Discord</a> for updates.</p>
+  </section>
+
+  <footer>
+    <div class="logo-placeholder">LOGO</div>
+    <p>&copy; 2025 SteamSaver. All rights reserved.</p>
+  </footer>
+</body>
+</html>
